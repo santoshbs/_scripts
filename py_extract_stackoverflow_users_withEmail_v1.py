@@ -13,7 +13,7 @@ df['email'] = df['AboutMe'].str.extract(r"([\w.-]+@[\w.-]+)").fillna('')
 print('DONE extracting emails!')
 
 print('creating dataframe of users with emails...')
-df_email = df[df['email'].str.len() != 0]
+df_email = df[df['email'].str.len() != 0].copy()
 print('DONE creating dataframe of users with emails :: ' + str(df_email.shape[0]) + ' users!')
 
 print('cleaning email field...')
